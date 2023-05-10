@@ -63,7 +63,7 @@ public class MethodParser {
                 if (after.equals(")")) {
                     break;
                 }
-                after = after.replaceAll("\\)", "");
+                after = after.replace(")", "");
                 StringTokenizer stringTokenizer1 = new StringTokenizer(after, " ");
                 int counter1 = 1;
                 String inn;
@@ -73,12 +73,12 @@ public class MethodParser {
                 while (stringTokenizer1.hasMoreTokens()) {
                     inn = stringTokenizer1.nextToken();
                     if (counter1 % 2 == 0) {
-                        argName = inn.replaceAll(",", "");
+                        argName = inn.replace(",", "");
                         MethodSignature.Argument argument = new MethodSignature.Argument(argType, argName);
                         arguments.add(counterSig, argument);
                         counterSig++;
                     } else {
-                        argType = inn.replaceAll(",", "");
+                        argType = inn.replace(",", "");
                     }
                     counter1++;
                 }
